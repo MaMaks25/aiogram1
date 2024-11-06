@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import sys
 
 from aiogram import Bot
 from aiogram import Dispatcher
@@ -22,6 +23,11 @@ async def handle_start(message: types.Message):
 @dp.message(Command("help"))
 async def handle_start(message: types.Message):
     await message.answer(text=f"I am a simple bot.\nSend me any message")
+@dp.message(Command("exit"))
+async def handle_start(message: types.Message):
+    await message.answer(text=f"-_-")
+    exit()
+    
 
 @dp.message()
 async def echo_message(message: types.Message):
