@@ -8,7 +8,7 @@ from aiogram import types
 from aiogram.filters import CommandStart, Command
 
 P = True
-My_IP = 1711818456
+My_ID = 1711818456
 BOT_T = '6234328757:AAGv1HE4awNCqc12ZJ5XCDUNX-eq3D8alIo'
 
 (P and print("Start"))
@@ -23,7 +23,7 @@ async def handle_start(message: types.Message):
 @dp.message(Command("help"))
 async def handle_start(message: types.Message):
     await message.answer(text=f"I am a simple bot.\nSend me any message")
-@dp.message(Command("exit"))
+@dp.message(Command("reboot"))
 async def handle_start(message: types.Message):
     await message.answer(text=f"-_-")
     exit()
@@ -46,6 +46,7 @@ async def echo_message(message: types.Message):
 
 
 async def main():
+    await bot.send_message(chat_id=My_ID, text="Bot start")
     logging.basicConfig(level=logging.INFO)
     await dp.start_polling(bot)
 
